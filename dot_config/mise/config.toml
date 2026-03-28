@@ -40,3 +40,8 @@ codex = "latest"
 java = "latest"
 "github:zellij-org/zellij" = "latest"
 "npm:skills" = "latest"
+
+[tasks.sync-dotfiles]
+run = '''
+powershell -ExecutionPolicy Bypass -Command "& 'C:/Users/megab/.config/mise/sync-dotfiles.ps1'"
+'''
