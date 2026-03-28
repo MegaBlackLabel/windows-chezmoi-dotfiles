@@ -41,6 +41,10 @@ java = "latest"
 "github:zellij-org/zellij" = "latest"
 "npm:skills" = "latest"
 
+# [tasks.sync-dotfiles]
+# shell = "powershell"
+# run = "powershell -ExecutionPolicy Bypass -Command \"& 'C:/Users/megab/.config/mise/sync-dotfiles.ps1'\""
+
 [tasks.sync-dotfiles]
 shell = "powershell"
-run = "powershell -ExecutionPolicy Bypass -Command \"& 'C:/Users/megab/.config/mise/sync-dotfiles.ps1'\""
+run = "chezmoi managed | Where-Object { -not (Test-Path (Join-Path $HOME $_) -PathType Container) } | ForEach-Object { chezmoi re-add (Join-Path $HOME $_) }; cd $HOME/.local/share/chezmoi; git add .; git commit -m \"Sync\"; git push"
