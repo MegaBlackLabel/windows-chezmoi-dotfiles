@@ -48,4 +48,4 @@ java = "latest"
 
 [tasks.sync-dotfiles]
 shell = "powershell"
-run = "foreach ($f in (chezmoi managed)) { if (-not (Test-Path (Join-Path $HOME $f) -PathType Container)) { chezmoi re-add (Join-Path $HOME $f) } }; Write-Host '===== chezmoi diff ====='; chezmoi diff; if (git -C \"$HOME/.local/share/chezmoi\" diff --quiet) { Write-Host 'No changes. Skip commit/push.'; exit 0 }; cd \"$HOME/.local/share/chezmoi\"; git add .; git commit -m 'Sync'; git push"
+run = "foreach ($f in (chezmoi managed)) { if (-not (Test-Path (Join-Path $HOME $f) -PathType Container)) { chezmoi re-add (Join-Path $HOME $f) } }; Write-Host '===== chezmoi diff ====='; $diff = chezmoi diff; Write-Host $diff; if ($diff -eq '') { Write-Host 'No changes. Skip commit/push.'; exit 0 }; cd \"$HOME/.local/share/chezmoi\"; git add .; git commit -m 'Sync'; git push"
