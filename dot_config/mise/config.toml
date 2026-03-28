@@ -49,8 +49,6 @@ java = "latest"
 [tasks.sync-dotfiles]
 shell = "powershell"
 run = '''
-Write-Host '===== BEFORE re-add (chezmoi diff) =====' -ForegroundColor Cyan
-
 # Get raw diff
 $before = chezmoi diff
 
@@ -61,9 +59,8 @@ $changedFiles = ($before |
         ($_ -replace '^diff --git a/', '') -replace ' b/.*$', ''
     } | Sort-Object -Unique)
 
-# Show changed file list
+# Show changed file list only
 if ($changedFiles.Count -gt 0) {
-    Write-Host 'Changed files:' -ForegroundColor Green
     $changedFiles | ForEach-Object { Write-Host (' - ' + $_) }
 } else {
     Write-Host 'No changes in HOME. Skip re-add/commit/push.' -ForegroundColor Yellow
@@ -78,7 +75,7 @@ foreach ($f in (chezmoi managed)) {
     }
 }
 
-Write-Host '===== AFTER re-add (git diff) =====' -ForegroundColor Cyan
+# AFTER re-add diff (git)
 git -C "$HOME/.local/share/chezmoi" diff --color=always
 
 if (git -C "$HOME/.local/share/chezmoi" diff --quiet) {
