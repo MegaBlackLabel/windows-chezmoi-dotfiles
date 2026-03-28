@@ -1,0 +1,77 @@
+{
+  "version": 3,
+  "skills": {
+    "tanstack-start-best-practices": {
+      "source": "deckardger/tanstack-agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/deckardger/tanstack-agent-skills.git",
+      "skillPath": "skills/tanstack-start/SKILL.md",
+      "skillFolderHash": "d4e415c2c618da237bbab97be0406e0c92efb18f",
+      "installedAt": "2026-03-28T12:56:33.037Z",
+      "updatedAt": "2026-03-28T12:58:28.751Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
+      "installedAt": "2026-03-28T12:56:39.797Z",
+      "updatedAt": "2026-03-28T12:56:39.797Z"
+    },
+    "rust-best-practices": {
+      "source": "apollographql/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/apollographql/skills.git",
+      "skillPath": "skills/rust-best-practices/SKILL.md",
+      "skillFolderHash": "73bee942cb621e4ee7f2c3f86de01ab09638ee5d",
+      "installedAt": "2026-03-28T13:04:01.230Z",
+      "updatedAt": "2026-03-28T13:04:01.230Z"
+    },
+    "hono": {
+      "source": "yusukebe/hono-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/yusukebe/hono-skill.git",
+      "skillPath": "skills/hono/SKILL.md",
+      "skillFolderHash": "16c9105ba9528eaa17a375ee56efb3c2376439ab",
+      "pluginName": "hono-skill",
+      "installedAt": "2026-03-28T13:05:13.235Z",
+      "updatedAt": "2026-03-28T13:05:13.235Z"
+    },
+    "gh-cli": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/github/awesome-copilot.git",
+      "skillPath": "skills/gh-cli/SKILL.md",
+      "skillFolderHash": "437437f7f20bcdbbdb3081cf164435a388c0a39a",
+      "installedAt": "2026-03-28T13:13:58.746Z",
+      "updatedAt": "2026-03-28T13:13:58.746Z"
+    },
+    "git-commit": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/github/awesome-copilot.git",
+      "skillPath": "skills/git-commit/SKILL.md",
+      "skillFolderHash": "883a6a7466f55a9cd9f22cf1cce2d9333fc9b998",
+      "installedAt": "2026-03-28T13:15:40.669Z",
+      "updatedAt": "2026-03-28T13:15:40.669Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
+    "opencode",
+    "warp",
+    "augment"
+  ]
+}
