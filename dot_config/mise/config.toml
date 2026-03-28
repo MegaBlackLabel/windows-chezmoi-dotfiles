@@ -50,8 +50,8 @@ java = "latest"
 shell = "powershell"
 run = '''
 Write-Host "===== BEFORE re-add (chezmoi diff) =====" -ForegroundColor Cyan
-$before = chezmoi diff --color=always
-Write-Host $before
+$before = chezmoi diff
+$before | git diff --color=always --no-index /dev/null - | Write-Host
 
 if ($before -eq "") {
     Write-Host "No changes in HOME. Skip re-add/commit/push." -ForegroundColor Yellow
