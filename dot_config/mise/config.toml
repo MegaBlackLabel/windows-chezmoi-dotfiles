@@ -42,6 +42,5 @@ java = "latest"
 "npm:skills" = "latest"
 
 [tasks.sync-dotfiles]
-run = '''
-powershell -ExecutionPolicy Bypass -Command "& 'C:/Users/megab/.config/mise/sync-dotfiles.ps1'"
-'''
+shell = "powershell"
+run = "powershell -ExecutionPolicy Bypass -Command \"& 'C:/Users/megab/.config/mise/sync-dotfiles.ps1'\""
