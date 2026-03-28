@@ -1,28 +1,26 @@
-$tmp = Join-Path $env:TEMP "yazi-chosen-$PID"
-Start-Process yazi -ArgumentList "--chooser-file=$tmp" -Wait
+# tmp file
+$tmp = Join-Path $env:TEMP ("yazi-chosen-" + $PID)
 
-if (Test-Path $tmp -PathType Leaf) {
-    $paths = Get-Content -Raw $tmp
-    
-    if ($paths -ne $null -and $paths.Trim() -ne "") {
-        # search:// 形式の場合、実際のパスを抽出
-        if ($paths -like "search://*") {
-            $paths = $paths -replace '^search://[^/]*/', ''
-        }
+# run yazi chooser
+yazi --chooser-file "$tmp"
 
-        Remove-Item $tmp -ErrorAction SilentlyContinue
-        
-        # Zellij 操作
-        zellij action toggle-floating-panes
-        zellij action write 27
-        zellij action write-chars ":open `"$paths`""
-        zellij action write 13
+if (Test-Path $tmp -and (Get-Content $tmp).Length -gt 0) {
+    $paths = Get-Content $tmp -Raw
+
+    # search:// の場合は実パスを抽出
+    if ($paths -like "search://*") {
+        $paths = $paths -replace "search://[^/]*/", ""
     }
-    else {
-        Remove-Item $tmp -ErrorAction SilentlyContinue
-        zellij action toggle-floating-panes
-    }
+
+    Remove-Item $tmp -Force
+
+    # zellij actions
+    zellij action toggle-floating-panes
+    zellij action write 27
+    zellij action write-chars ":open `"$paths`""
+    zellij action write 13
 }
 else {
+    if (Test-Path $tmp) { Remove-Item $tmp -Force }
     zellij action toggle-floating-panes
 }

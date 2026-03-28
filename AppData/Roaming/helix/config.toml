@@ -1,6 +1,8 @@
 theme = "catppuccin_mocha"
 
+[keys.normal]
+C-y = ":sh powershell -NoProfile -ExecutionPolicy Bypass -File C:\\Users\\megab\\AppData\\Roaming\\helix\\yazi-picker.ps1"
+
+
 # [keys.normal]
-# C-y = "zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- powershell -NoProfile -ExecutionPolicy Bypass -File %appdata%helix\yazi-picker.ps1\""
-
-
+# C-y = ":sh zellij action new-pane -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- powershell -NoProfile -ExecutionPolicy Bypass -File C:\\Users\\megab\\AppData\\Roaming\\helix\\yazi-picker.ps1"
