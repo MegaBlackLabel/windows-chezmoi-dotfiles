@@ -49,15 +49,28 @@ java = "latest"
 [tasks.sync-dotfiles]
 shell = "powershell"
 run = '''
-Write-Host "===== BEFORE re-add (chezmoi diff) =====" -ForegroundColor Cyan
-$before = chezmoi diff
-$before | git diff --color=always --no-index /dev/null - | Write-Host
+Write-Host '===== BEFORE re-add (chezmoi diff) =====' -ForegroundColor Cyan
 
-if ($before -eq "") {
-    Write-Host "No changes in HOME. Skip re-add/commit/push." -ForegroundColor Yellow
+# Get raw diff
+$before = chezmoi diff
+
+# Extract changed file paths (unique)
+$changedFiles = ($before |
+    Select-String -Pattern '^diff --git a/(.+?) b/' |
+    ForEach-Object {
+        ($_ -replace '^diff --git a/', '') -replace ' b/.*$', ''
+    } | Sort-Object -Unique)
+
+# Show changed file list
+if ($changedFiles.Count -gt 0) {
+    Write-Host 'Changed files:' -ForegroundColor Green
+    $changedFiles | ForEach-Object { Write-Host (' - ' + $_) }
+} else {
+    Write-Host 'No changes in HOME. Skip re-add/commit/push.' -ForegroundColor Yellow
     exit 0
 }
 
+# re-add
 foreach ($f in (chezmoi managed)) {
     $path = Join-Path $HOME $f
     if (-not (Test-Path $path -PathType Container)) {
@@ -65,16 +78,16 @@ foreach ($f in (chezmoi managed)) {
     }
 }
 
-Write-Host "===== AFTER re-add (git diff) =====" -ForegroundColor Cyan
+Write-Host '===== AFTER re-add (git diff) =====' -ForegroundColor Cyan
 git -C "$HOME/.local/share/chezmoi" diff --color=always
 
 if (git -C "$HOME/.local/share/chezmoi" diff --quiet) {
-    Write-Host "No changes to source state. Skip commit/push." -ForegroundColor Yellow
+    Write-Host 'No changes to source state. Skip commit/push.' -ForegroundColor Yellow
     exit 0
 }
 
 cd "$HOME/.local/share/chezmoi"
 git add .
-git commit -m "Sync"
+git commit -m 'Sync'
 git push
 '''
