@@ -42,6 +42,10 @@ java = "latest"
 "npm:skills" = "latest"
 
 
+# [tasks.sync-dotfiles]
+# shell = "powershell"
+# run = "chezmoi managed | Where-Object { -not (Test-Path (Join-Path $HOME $_) -PathType Container) } | ForEach-Object { chezmoi re-add (Join-Path $HOME $_) }; cd $HOME/.local/share/chezmoi; git add .; git commit -m \"Sync\"; git push"
+
 [tasks.sync-dotfiles]
 shell = "powershell"
-run = "chezmoi managed | Where-Object { -not (Test-Path (Join-Path $HOME $_) -PathType Container) } | ForEach-Object { chezmoi re-add (Join-Path $HOME $_) }; cd $HOME/.local/share/chezmoi; git add .; git commit -m \"Sync\"; git push"
+run = "chezmoi managed | Where-Object { -not (Test-Path (Join-Path $HOME $_) -PathType Container) } | ForEach-Object { chezmoi re-add (Join-Path $HOME $_) }; Write-Host '===== chezmoi diff ====='; chezmoi diff; if (git -C \"$HOME/.local/share/chezmoi\" diff --quiet) { Write-Host 'No changes. Skip commit/push.'; exit 0 }; cd \"$HOME/.local/share/chezmoi\"; git add .; git commit -m 'Sync'; git push"
