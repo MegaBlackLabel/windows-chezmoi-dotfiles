@@ -56,10 +56,11 @@ foreach ($f in (chezmoi managed)) {
     }
 }
 
-Write-Host '===== GIT diff ====='
-git -C "$HOME/.local/share/chezmoi" diff
+Write-Host '===== chezmoi diff ====='
+$diff = chezmoi diff
+Write-Host $diff
 
-if (git -C "$HOME/.local/share/chezmoi" diff --quiet) {
+if ($diff -eq '') {
     Write-Host 'No changes. Skip commit/push.'
     exit 0
 }
