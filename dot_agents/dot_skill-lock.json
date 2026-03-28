@@ -55,6 +55,126 @@
       "skillFolderHash": "883a6a7466f55a9cd9f22cf1cce2d9333fc9b998",
       "installedAt": "2026-03-28T13:15:40.669Z",
       "updatedAt": "2026-03-28T13:15:40.669Z"
+    },
+    "rust-wasm": {
+      "source": "pluginagentmarketplace/custom-plugin-rust",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/pluginagentmarketplace/custom-plugin-rust.git",
+      "skillPath": "skills/rust-wasm/SKILL.md",
+      "skillFolderHash": "f880da43f9072f8db3ad32cd06c2551456a3baf6",
+      "installedAt": "2026-03-28T13:28:04.442Z",
+      "updatedAt": "2026-03-28T13:28:04.442Z"
+    },
+    "pwa-development": {
+      "source": "mindrally/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mindrally/skills.git",
+      "skillPath": "pwa-development/SKILL.md",
+      "skillFolderHash": "05cc2de6cfb06db1d85aad122e195469771230e4",
+      "installedAt": "2026-03-28T13:30:16.634Z",
+      "updatedAt": "2026-03-28T13:30:16.634Z"
+    },
+    "typescript-advanced-types": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/javascript-typescript/skills/typescript-advanced-types/SKILL.md",
+      "skillFolderHash": "a2fe3beb2f08b66b467981df7e09a2ccc5c9c7d2",
+      "installedAt": "2026-03-28T13:32:02.032Z",
+      "updatedAt": "2026-03-28T13:32:02.032Z"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "skillFolderHash": "928950704df8a8b885c03de5da626331e6f29cf8",
+      "pluginName": "example-skills",
+      "installedAt": "2026-03-28T13:34:05.813Z",
+      "updatedAt": "2026-03-28T13:34:05.813Z"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "skillFolderHash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89",
+      "installedAt": "2026-03-28T13:34:34.537Z",
+      "updatedAt": "2026-03-28T13:34:34.537Z"
+    },
+    "canvas-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/canvas-design/SKILL.md",
+      "skillFolderHash": "928af0a3279dc4e0c0e6ceaf407a8542a2bb2aa2",
+      "pluginName": "example-skills",
+      "installedAt": "2026-03-28T13:34:51.481Z",
+      "updatedAt": "2026-03-28T13:34:51.481Z"
+    },
+    "tailwindcss-advanced-layouts": {
+      "source": "josiahsiegel/claude-plugin-marketplace",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/josiahsiegel/claude-plugin-marketplace.git",
+      "skillPath": "plugins/tailwindcss-master/skills/tailwindcss-advanced-layouts/SKILL.md",
+      "skillFolderHash": "65e47f04cf8f9210f5e84f980a29aa8e0f9e0cd7",
+      "installedAt": "2026-03-28T13:35:35.397Z",
+      "updatedAt": "2026-03-28T13:35:35.397Z"
+    },
+    "using-git-worktrees": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/obra/superpowers.git",
+      "skillPath": "skills/using-git-worktrees/SKILL.md",
+      "skillFolderHash": "a5b3f5965f321175a7f07dcadff0bb79adb9e9f7",
+      "installedAt": "2026-03-28T13:40:39.639Z",
+      "updatedAt": "2026-03-28T13:40:39.639Z"
+    },
+    "playwright-best-practices": {
+      "source": "currents-dev/playwright-best-practices-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/currents-dev/playwright-best-practices-skill.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "ef329e7e65149918e1ff0eed2cf7d2e6e6f9eb5b",
+      "installedAt": "2026-03-28T13:41:21.441Z",
+      "updatedAt": "2026-03-28T13:41:21.441Z"
+    },
+    "changelog-generator": {
+      "source": "composiohq/awesome-claude-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/composiohq/awesome-claude-skills.git",
+      "skillPath": "changelog-generator/SKILL.md",
+      "skillFolderHash": "72258d6496ccd708fb946591d944282d6de03f13",
+      "installedAt": "2026-03-28T13:43:30.274Z",
+      "updatedAt": "2026-03-28T13:43:30.274Z"
+    },
+    "webapp-testing": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/webapp-testing/SKILL.md",
+      "skillFolderHash": "74cb751576f9e9af2aedff47e67861ef26db2dc4",
+      "pluginName": "example-skills",
+      "installedAt": "2026-03-28T13:44:11.552Z",
+      "updatedAt": "2026-03-28T13:44:11.552Z"
+    },
+    "test-driven-development": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/obra/superpowers.git",
+      "skillPath": "skills/test-driven-development/SKILL.md",
+      "skillFolderHash": "98904a7d8e0e04b9bd46220b9b17298f45fe0b72",
+      "installedAt": "2026-03-28T13:44:47.897Z",
+      "updatedAt": "2026-03-28T13:44:47.897Z"
+    },
+    "subagent-driven-development": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/obra/superpowers.git",
+      "skillPath": "skills/subagent-driven-development/SKILL.md",
+      "skillFolderHash": "fbcd94ffcf589754a8ecfa59861cc8843313590e",
+      "installedAt": "2026-03-28T13:45:18.773Z",
+      "updatedAt": "2026-03-28T13:45:18.773Z"
     }
   },
   "dismissed": {
