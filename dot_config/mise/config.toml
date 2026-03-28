@@ -52,20 +52,45 @@ run = '''
 # Get raw diff
 $before = chezmoi diff
 
-# Extract changed file paths (unique)
-$changedFiles = ($before |
+# Extract diff hunks
+$diffLines = $before -split "`n"
+
+# Extract changed file paths
+$files = ($diffLines |
     Select-String -Pattern '^diff --git a/(.+?) b/' |
     ForEach-Object {
         ($_ -replace '^diff --git a/', '') -replace ' b/.*$', ''
     } | Sort-Object -Unique)
 
-# Show changed file list only
-if ($changedFiles.Count -gt 0) {
-    $changedFiles | ForEach-Object { Write-Host (' - ' + $_) }
-} else {
+# Classify changes
+$added = @()
+$deleted = @()
+$modified = @()
+
+foreach ($file in $files) {
+    $fileDiff = $diffLines | Select-String -Pattern $file -Context 0,50
+
+    $plus = ($fileDiff | Select-String -Pattern '^\+[^+]').Count
+    $minus = ($fileDiff | Select-String -Pattern '^\-[^-]').Count
+
+    if ($plus -gt 0 -and $minus -eq 0) {
+        $added += $file
+    } elseif ($minus -gt 0 -and $plus -eq 0) {
+        $deleted += $file
+    } else {
+        $modified += $file
+    }
+}
+
+# Output
+if ($files.Count -eq 0) {
     Write-Host 'No changes in HOME. Skip re-add/commit/push.' -ForegroundColor Yellow
     exit 0
 }
+
+foreach ($f in $added)   { Write-Host (' + ' + $f) -ForegroundColor Green }
+foreach ($f in $deleted) { Write-Host (' - ' + $f) -ForegroundColor Red }
+foreach ($f in $modified){ Write-Host (' * ' + $f) -ForegroundColor Yellow }
 
 # re-add
 foreach ($f in (chezmoi managed)) {
