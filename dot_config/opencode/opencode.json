@@ -1,0 +1,141 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "plugin": [
+    "oh-my-openagent@latest"
+  ],
+
+  "permission": {
+
+    "read": {
+      "**/.env": "deny",
+      "**/.env.*": "deny",
+      "**/.env.example": "allow",
+
+      "**/.npmrc": "deny",
+      "**/.git-credentials": "deny",
+      "**/.git/config": "deny",
+
+      "**/.ssh/**": "deny",
+      "C:/Users/**/.ssh/**": "deny",
+
+      "C:/Users/**/Documents/**": "deny",
+      "C:/Users/**/Desktop/**": "deny",
+      "C:/Users/**/Downloads/**": "deny",
+      "C:/Users/**/Pictures/**": "deny",
+      "C:/Users/**/Videos/**": "deny",
+      "C:/Users/**/Music/**": "deny",
+      "C:/Users/**/Saved Games/**": "deny",
+      "C:/Users/**/OneDrive/**": "deny",
+
+      "**/.git/**": "allow",
+
+      "C:/Users/**/.openagent/**": "allow",
+
+      "C:/Users/**/AppData/Local/Temp/**": "allow",
+      "C:/Windows/Temp/**": "allow",
+
+      "C:/Users/**/AppData/Local/Programs/**": "allow",
+      "C:/Users/**/AppData/Local/bun/**": "allow",
+      "C:/Users/**/AppData/Local/npm-cache/**": "allow",
+      "C:/Users/**/AppData/Local/node/**": "allow",
+
+      "*": "allow"
+    },
+
+    "edit": {
+      "**/.env": "deny",
+      "**/.env.*": "deny",
+
+      "**/.git/**": "deny",
+      "**/.vscode/**": "deny",
+
+      "**/node_modules/**": "deny",
+      "**/dist/**": "deny",
+      "**/build/**": "deny",
+
+      "**/package-lock.json": "deny",
+      "**/pnpm-lock.yaml": "deny",
+      "**/bun.lockb": "deny",
+
+      "C:/Users/**/.openagent/**": "allow",
+
+      "C:/Users/**/AppData/Local/Temp/**": "allow",
+
+      "*": "deny",
+      "D:/develop/**": "allow",
+      "D:/develop/.ai-tmp/**": "allow",
+      "D:/develop/.plugin-sandbox/**": "allow"
+    },
+
+    "bash": {
+      "*": "deny",
+
+      "cd D:/develop*": "allow",
+
+      "git clone *": "allow",
+      "git pull *": "allow",
+      "git fetch *": "allow",
+      "git status": "allow",
+      "git branch *": "allow",
+      "git checkout *": "allow",
+      "git switch *": "allow",
+      "git add *": "allow",
+      "git commit *": "allow",
+      "git push": "allow",
+      "git log *": "allow",
+
+      "git push --force": "deny",
+      "git reset --hard": "deny",
+
+      "gh repo *": "allow",
+      "gh pr *": "allow",
+      "gh issue *": "allow",
+      "gh workflow *": "allow",
+      "gh run *": "allow",
+      "gh release *": "allow",
+
+      "gh auth *": "deny",
+      "gh secret *": "deny",
+
+      "openagent *": "allow",
+      "openagent plugin install *": "allow",
+      "openagent plugin remove *": "allow",
+      "openagent plugin list": "allow",
+      "openagent plugin update": "allow",
+      "openagent run *": "allow",
+      "openagent doctor": "allow",
+      "openagent update": "allow",
+
+      "oh-my-opencode *": "allow",
+
+      "bun install": "allow",
+      "bun add *": "allow",
+      "bun remove *": "allow",
+      "bun run *": "allow",
+      "bun test": "allow",
+
+      "bunx *": "allow",
+
+      "node *": "allow",
+
+      "dir": "allow",
+      "pwd": "allow",
+      "echo *": "allow",
+
+      "rm *": "deny",
+      "del *": "deny",
+      "rmdir *": "deny",
+      "format *": "deny",
+      "shutdown *": "deny",
+      "reboot *": "deny",
+      "taskkill *": "deny",
+      "sc *": "deny",
+      "powershell *": "deny",
+      "reg *": "deny",
+      "bcdedit *": "deny",
+      "takeown *": "deny",
+      "icacls *": "deny"
+    }
+  }
+}
