@@ -185,6 +185,15 @@
       "pluginName": "example-skills",
       "installedAt": "2026-03-28T14:47:48.363Z",
       "updatedAt": "2026-03-28T14:47:48.363Z"
+    },
+    "using-superpowers": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/obra/superpowers.git",
+      "skillPath": "skills/using-superpowers/SKILL.md",
+      "skillFolderHash": "53bdaa7bc95ff9bebdfdde4093a2b7ef34f54c15",
+      "installedAt": "2026-03-29T13:46:05.631Z",
+      "updatedAt": "2026-03-29T13:46:05.631Z"
     }
   },
   "dismissed": {
