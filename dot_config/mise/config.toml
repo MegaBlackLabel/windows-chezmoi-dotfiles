@@ -40,6 +40,9 @@ codex = "latest"
 java = "latest"
 "github:zellij-org/zellij" = "latest"
 "npm:skills" = "latest"
+"npm:oh-my-opencode" = "latest"
+"npm:@opencode-ai/plugin" = "latest"
+"npm:@code-yeongyu/comment-checker" = "latest"
 
 
 # [tasks.sync-dotfiles]
