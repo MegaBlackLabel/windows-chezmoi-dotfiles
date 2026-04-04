@@ -43,6 +43,7 @@ java = "latest"
 "npm:oh-my-opencode" = "latest"
 "npm:@opencode-ai/plugin" = "latest"
 "npm:@code-yeongyu/comment-checker" = "latest"
+tmux = "latest"
 
 
 # [tasks.sync-dotfiles]
